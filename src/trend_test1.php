@@ -1,6 +1,7 @@
 <?php
     function solution($S)
     {
+        $count = -1;
         if (preg_match_all('/([a-z]*[A-Z]+[a-z]*|[A-Z]+[a-z]*|[a-z]*[A-Z]+)/', $S, $matches))
         {
             $count = 0;
@@ -13,8 +14,8 @@
                     $count += checkIsValid($word);
                 }
             }
-            return $count;
         }
+        return $count;
     }
 
     function checkIsValid($word)
