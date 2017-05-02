@@ -27,4 +27,15 @@ class test extends PHPUnit_Framework_TestCase
       $this->assertEquals($expected, $actual);
     }
 
+    public function test_string_a0bbB0123_get_minus_1()
+    {
+      //arrange
+      $actual = solution("a0bb");
+
+      //acturl
+      $expected = -1;
+
+      //assert
+      $this->assertEquals($expected, $actual);
+    }
 }

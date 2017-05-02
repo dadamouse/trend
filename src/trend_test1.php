@@ -4,14 +4,19 @@
         $count = -1;
         if (preg_match_all('/([a-z]*[A-Z]+[a-z]*|[A-Z]+[a-z]*|[a-z]*[A-Z]+)/', $S, $matches))
         {
-            $count = 0;
             $lists = end($matches);
 
             if (!empty($lists))
             {
+                //should return longest password
+                usort($lists, function($a, $b) {
+                    return strlen($b) - strlen($a);
+                });
+                
                 foreach ($lists as $word)
                 {
-                    $count += checkIsValid($word);
+                    $count = checkIsValid($word);
+                    return $count;
                 }
             }
         }
